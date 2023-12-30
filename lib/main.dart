@@ -37,7 +37,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Lowongan KERJA',
+      title: 'Pendaftaran Tamu',
       debugShowCheckedModeBanner: false,
       home: LoginPage(),
     );
