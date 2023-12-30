@@ -18,11 +18,11 @@ class _TamuPageState extends State<TamuPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.deepPurple,
         foregroundColor: Colors.white,
         centerTitle: true,
         title: Text(
-          'List Tamu Hadir',
+          'DAFTAR TAMU',
           style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
         ),
       ),
@@ -30,7 +30,10 @@ class _TamuPageState extends State<TamuPage> {
         child: ListView(
           children: [
             ListTile(
-              title: Text("Logout"),
+              iconColor: Colors.deepOrange,
+              title: Text("KELUAR",
+                  style: TextStyle(
+                      color: Colors.deepPurple, fontWeight: FontWeight.bold)),
               trailing: Icon(Icons.logout),
               onTap: () async {
                 await LogoutBloc.logout().then(
@@ -77,7 +80,7 @@ class _TamuPageState extends State<TamuPage> {
                       padding:
                           const EdgeInsets.only(left: 25, top: 15, bottom: 5),
                       child: Text(
-                        'Listed Job',
+                        'Tamu Terdaftar',
                         style: TextStyle(fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -108,7 +111,7 @@ class _TamuPageState extends State<TamuPage> {
             ),
           );
         },
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.deepPurple,
         foregroundColor: Colors.white,
         child: Icon(Icons.add),
       ),
@@ -162,7 +165,7 @@ class ItemTamu extends StatelessWidget {
       margin: EdgeInsets.all(5),
       padding: EdgeInsets.all(4),
       decoration: BoxDecoration(
-        color: Colors.black87,
+        color: Colors.deepPurple,
         borderRadius: BorderRadius.circular(10), // Adjust the radius as needed
       ),
       child: GestureDetector(
