@@ -37,8 +37,8 @@ class _TamuFormState extends State<TamuForm> {
         _alamatTamuTextBoxController.text = widget.tamu?.alamat ?? '';
       });
     } else {
-      judul = "TAMBAH LIST TAMU";
-      tombolSubmit = "SUBMIT";
+      judul = "PENCATATAN TAMU";
+      tombolSubmit = "DAFTARIN";
     }
   }
 
@@ -46,7 +46,7 @@ class _TamuFormState extends State<TamuForm> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.deepPurple,
         foregroundColor: Colors.white,
         title: Text(
           judul,
@@ -54,23 +54,38 @@ class _TamuFormState extends State<TamuForm> {
         ),
         centerTitle: true,
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          child: Padding(
-            padding: const EdgeInsets.only(top: 10, right: 20, left: 20),
-            child: Form(
-              key: _formKey,
-              child: Column(
-                children: [
-                  _namaTamuTextField(),
-                  _jamTamuTextField(),
-                  _alamatTamuTextField(),
-                  SizedBox(
-                    height: 20,
+      body: Center(
+        child: SingleChildScrollView(
+          child: Container(
+            width: MediaQuery.of(context).size.width * 0.9,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Form(
+                    key: _formKey,
+                    child: Column(
+                      children: [
+                        Text("DAFTARKAN TAMU",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.deepPurple,
+                                fontSize: 20)),
+                        SizedBox(height: 30),
+                        _namaTamuTextField(),
+                        _jamTamuTextField(),
+                        _alamatTamuTextField(),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        _buttonSubmit()
+                      ],
+                    ),
                   ),
-                  _buttonSubmit()
-                ],
-              ),
+                ),
+              ],
             ),
           ),
         ),
@@ -106,8 +121,7 @@ class _TamuFormState extends State<TamuForm> {
           labelText: "Jam",
           border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
         ),
-        maxLines: null,
-        keyboardType: TextInputType.multiline,
+        keyboardType: TextInputType.text,
         controller: _jamTamuTextBoxController,
         validator: (value) {
           if (value!.isEmpty) {
@@ -143,7 +157,7 @@ class _TamuFormState extends State<TamuForm> {
   Widget _buttonSubmit() {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.black, foregroundColor: Colors.white),
+            backgroundColor: Colors.deepPurple, foregroundColor: Colors.white),
         child: Text(tombolSubmit),
         onPressed: () {
           // Assuming _formKey is properly defined and associated with your Form widget
