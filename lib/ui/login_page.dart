@@ -20,27 +20,34 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.deepPurple,
         foregroundColor: Colors.white,
-        title: Text(
-          "ADMIN LOGIN",
-          style: TextStyle(fontWeight: FontWeight.bold),
-        ),
         centerTitle: true,
+        title: Text("PENDAFTARAN TAMU",
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          child: Padding(
-            padding: const EdgeInsets.all(15),
-            child: Form(
-              key: _formKey,
-              child: Column(
-                children: [
-                  _emailTextField(),
-                  _passwordTextField(),
-                  _buttonLogin(),
-                ],
-              ),
+      body: Center(
+        child: SingleChildScrollView(
+          child: Container(
+            width: MediaQuery.of(context).size.width * 0.8,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Text(
+                    "WELCOME ADMIN",
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.deepPurple),
+                  ),
+                ),
+                _emailTextField(),
+                _passwordTextField(),
+                _buttonLogin(),
+              ],
             ),
           ),
         ),
@@ -72,7 +79,7 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _passwordTextField() {
     return Padding(
-      padding: const EdgeInsets.only(left: 20, right: 20, top: 5, bottom: 20),
+      padding: const EdgeInsets.only(left: 20, right: 20, top: 5, bottom: 25),
       child: TextFormField(
         decoration: InputDecoration(
           labelText: "Password",
@@ -103,7 +110,7 @@ class _LoginPageState extends State<LoginPage> {
         }
       },
       style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.deepPurple,
           foregroundColor: Colors.white,
           padding: EdgeInsets.only(left: 50, right: 50, top: 5, bottom: 5),
           textStyle: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
