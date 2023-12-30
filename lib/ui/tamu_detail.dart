@@ -19,10 +19,10 @@ class _TamuDetailState extends State<TamuDetail> {
   Widget build(BuildContext) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.black,
+          backgroundColor: Colors.deepPurple,
           foregroundColor: Colors.white,
           title: Text(
-            "DETAIL PEKERJAAN",
+            "INFO TAMU",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24),
           ),
           centerTitle: true,
@@ -41,7 +41,7 @@ class _TamuDetailState extends State<TamuDetail> {
                   Container(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      "Posisi",
+                      "Nama",
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                     ),
@@ -53,7 +53,7 @@ class _TamuDetailState extends State<TamuDetail> {
                   Container(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      "Skill",
+                      "Jam",
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                     ),
@@ -65,7 +65,7 @@ class _TamuDetailState extends State<TamuDetail> {
                   Container(
                     alignment: Alignment.topLeft,
                     child: Text(
-                      "Jobdesc",
+                      "Alamat",
                       style:
                           TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
                     ),
@@ -89,7 +89,8 @@ class _TamuDetailState extends State<TamuDetail> {
       children: [
         ElevatedButton(
           style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.white, foregroundColor: Colors.black),
+              backgroundColor: Colors.white,
+              foregroundColor: Colors.deepPurple),
           onPressed: () {
             Navigator.push(
               context,
@@ -103,7 +104,8 @@ class _TamuDetailState extends State<TamuDetail> {
         SizedBox(width: 20),
         ElevatedButton(
           style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.black, foregroundColor: Colors.white),
+              backgroundColor: Colors.deepPurple,
+              foregroundColor: Colors.white),
           onPressed: () => confirmHapus(),
           child: Text("DELETE"),
         ),
